@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Submitted</title>
+</head>
+<body>
+    <h1>Thank You for Your Feedback!</h1>
+
+    <p><strong>Name:</strong> {{ data.name }}</p>
+    <p><strong>Email:</strong> {{ data.email }}</p>
+    <p><strong>Rating:</strong> {{ data.rating }}</p>
+    <p><strong>Comments:</strong> {{ data.comments }}</p>
+
+    {% if data.attachment %}
+        <p><strong>Attachment uploaded:</strong> {{ data.attachment.name }}</p>
+    {% else %}
+        <p><strong>Attachment uploaded:</strong> None</p>
+    {% endif %}
+
+    <a href="{% url 'feedback_form' %}">Submit another response</a>
+</body>
+</html>
